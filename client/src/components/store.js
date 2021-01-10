@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Nav from "./navigation.js";
 
-class Account extends Component {
+class Store extends Component {
   constructor(props) {
     super(props);
   }
@@ -12,4 +12,4 @@ class Account extends Component {
   }
 }
 
-export default Account;
+export default Store;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Grid, Row, Button } from "react-bootstrap";
 
-import Nav from "./nav.js";
+import Nav from "./navigation.js";
 
 class Main extends Component {
   constructor(props) {
@@ -10,10 +10,12 @@ class Main extends Component {
 
   render() {
     return (
-      <div>
-        <Nav />
-        <h1>Main</h1>
-      </div>
+      <Container>
+        <div>
+          <Nav />
+          <h1>Home</h1>
+        </div>
+      </Container>
     );
   }
 }
