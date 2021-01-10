@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Account from "./account.js";
 import Nav from "./nav.js";
 
 class Main extends Component {
@@ -12,13 +10,10 @@ class Main extends Component {
 
   render() {
     return (
-      <Router>
-        <div>
-          <h1>test</h1>
-          <Nav />
-          <Route path="/account" exact component={Account} />
-        </div>
-      </Router>
+      <div>
+        <Nav />
+        <h1>Main</h1>
+      </div>
     );
   }
 }

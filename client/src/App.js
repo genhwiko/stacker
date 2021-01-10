@@ -11,8 +11,8 @@ function App() {
     <main>
       <Switch>
         <Route path="/" component={Login} exact />
-        <Route path="/main.js" component={Main} exact />
-        <Route path="/account.js" component={Account} exact />
+        <Route path="/main" component={Main} />
+        <Route path="/account" component={Account} />
         <Route component={Error} />
       </Switch>
     </main>

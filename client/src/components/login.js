@@ -14,10 +14,8 @@ class Login extends Component {
   }
 
   handleLogin = () => {
-    this.props.history.push("/main.js");
-    // document.getElementById("login").style.display = "none";
-    // this.setState({ loggedIn: true });
     // Validate info with backend
+    this.props.history.push("/main");
   };
 
   handleRegister = () => {
