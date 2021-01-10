@@ -19,9 +19,19 @@ const Login = () => {
     dispatch(getUsers());
   }, [dispatch]);
 
-  const handleLogin = () => {
-    // Validate info with backend
-    history.push("/main");
+  const handleLogin = (e) => {
+    e.preventDefault();
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
+
+    users.map((user) => {
+      if (user.username === username && user.password === password) {
+        history.push("/main");
+      } else {
+        document.getElementById("incorrectLogin").innerHTML =
+          "<h5 >Username or Password Incorrect</h5>";
+      }
+    });
   };
 
   const handleShow = () => {
@@ -36,14 +46,15 @@ const Login = () => {
     <div id="login">
       <Container>
         <h1>Stacker</h1>
-        <form>
+        <form onSubmit={handleLogin}>
+          <div id="incorrectLogin"></div>
           <label>UserName</label>
-          <input type="text" />
+          <input id="username" required={true} type="text" />
           <br></br>
           <label>Password</label>
-          <input type="password" />
+          <input id="password" required={true} type="password" />
           <br></br>
-          <Button onClick={handleLogin}>Login</Button>
+          <Button type="submit">Login</Button>
         </form>
 
         <Button onClick={handleShow}>Register</Button>
