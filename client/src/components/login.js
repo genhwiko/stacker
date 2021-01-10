@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { withRouter, useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Button, Modal } from "react-bootstrap";
@@ -10,8 +10,8 @@ import Form from "./Form/Form.js";
 
 const Login = () => {
   const history = useHistory();
-
   const [show, setShow] = useState(false);
+  const users = useSelector((state) => state.users);
 
   const dispatch = useDispatch();
 
@@ -22,10 +22,6 @@ const Login = () => {
   const handleLogin = () => {
     // Validate info with backend
     history.push("/main");
-  };
-
-  const handleRegister = () => {
-    // Handle Registration
   };
 
   const handleShow = () => {
@@ -45,23 +41,16 @@ const Login = () => {
           <input type="text" />
           <br></br>
           <label>Password</label>
-          <input type="text" />
+          <input type="password" />
           <br></br>
           <Button onClick={handleLogin}>Login</Button>
         </form>
 
         <Button onClick={handleShow}>Register</Button>
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header>
-            <Modal.Title>Register</Modal.Title>
-          </Modal.Header>
           <Modal.Body>
             <Form />
           </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={handleRegister}>Create Account</Button>
-            <Button onClick={handleClose}>Close</Button>
-          </Modal.Footer>
         </Modal>
       </Container>
     </div>

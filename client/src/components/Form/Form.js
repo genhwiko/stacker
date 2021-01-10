@@ -25,15 +25,15 @@ const Form = () => {
     <Paper className={classes.paper}>
       <form
         autoComplete="off"
-        noValidate
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">Creating a Memory</Typography>
+        <Typography variant="h6">Create an Account</Typography>
         <TextField
           name="username"
           variant="outlined"
           label="Username"
+          required={true}
           fullWidth
           value={postData.username}
           onChange={(e) =>
@@ -45,6 +45,7 @@ const Form = () => {
           variant="outlined"
           label="Email"
           fullWidth
+          required={true}
           value={postData.email}
           onChange={(e) => setPostData({ ...postData, email: e.target.value })}
         />
@@ -53,6 +54,7 @@ const Form = () => {
           variant="outlined"
           label="Password"
           fullWidth
+          required={true}
           value={postData.password}
           onChange={(e) =>
             setPostData({ ...postData, password: e.target.value })
@@ -66,7 +68,7 @@ const Form = () => {
           type="submit"
           fullWidth
         >
-          Submit
+          Create Account
         </Button>
       </form>
     </Paper>
